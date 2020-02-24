@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "761240395612",
+    "firebase_url": "https://epeolatry-32f24.firebaseio.com",
+    "project_id": "epeolatry-32f24",
+    "storage_bucket": "epeolatry-32f24.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:761240395612:android:9e3238a0b1dff4562b2b99",
+        "android_client_info": {
+          "package_name": "com.adarsh.epeolatry"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "761240395612-ubmt3p0vqglgi1h9rj4ts5uilmfb3r26.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBemuAx6mdE-4uBYeDq-Pmrs4J41VvTtuA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "761240395612-ubmt3p0vqglgi1h9rj4ts5uilmfb3r26.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
