@@ -70,14 +70,26 @@
         android:layout_marginLeft="130dp"
         android:layout_marginRight="20dp"
         android:layout_below="@id/loginet1"
-        android:textColor="#25D366"
         android:padding="2dp"
         android:layout_marginTop="30dp"
         android:id="@+id/loginet2"
         android:inputType="textPassword"
         />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:layout_below="@id/loginet2"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/loginstatus"
+        android:layout_marginTop="20dp"
+        android:textColor="#D81313"
+        android:textSize="18sp"
+        android:textStyle="normal"
+        android:fontFamily="sans-serif-light"
+        />
     <Button
-        android:id="@+id/register"
+        android:id="@+id/login"
         android:text="Login"
         android:textColor="#0A0A09"
         android:textSize="25sp"
@@ -91,7 +103,7 @@
         android:layout_below="@id/loginet2"
         android:layout_alignParentEnd="true"
         android:layout_marginRight="30dp"
-        android:layout_marginTop="45dp"
+        android:layout_marginTop="55dp"
         android:layout_alignParentRight="true" />
 
     <TextView
@@ -99,7 +111,7 @@
         android:layout_height="wrap_content"
         android:text="Dont have account? \nLogin Here"
         android:layout_below="@id/loginet2"
-        android:layout_marginTop="45dp"
+        android:layout_marginTop="55dp"
         android:textSize="15dp"
         android:layout_marginLeft="20dp"
         android:textStyle="italic"

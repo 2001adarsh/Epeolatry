@@ -67,7 +67,7 @@
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_alignLeft="@id/registerTV1"
-        android:layout_marginLeft="130dp"
+        android:layout_marginLeft="120dp"
         android:layout_marginRight="20dp"
         android:layout_below="@id/et1"
         android:padding="2dp"
