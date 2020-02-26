@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -23,7 +24,6 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
     private EditText loginet1, loginet2;
     private Button login;
     private FirebaseAuth mAuth;
-    private String email, password;
     private String TAG ="LoginPage";
 
     @Override
@@ -61,56 +61,59 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
             startActivity(it);
         }
         if(i == R.id.login){
-            email = loginet1.getText().toString();
-            password = loginet2.getText().toString();
-            if(email.isEmpty()){
-                loginet1.setError("Cannot be Empty");
-                loginet1.requestFocus();
-            }
-            else if(password.isEmpty())
-            {
-                loginet2.setError("Cannot be Empty");
-                loginet2.requestFocus();
-            }
-            else if(email.isEmpty() || password.isEmpty())
-            {
-                Toast.makeText(this, "Fields cannot be empty!", Toast.LENGTH_SHORT).show();
-            }
-            else
-            { loginpls(); }
+            loginpls();
         }
     }
 
     private void loginpls()
     {
-        mAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-            @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
-                if (task.isSuccessful()) {
-                    // Sign in success, update UI with the signed-in user's information
-                    Log.d(TAG, "signInWithEmail:success");
-                    FirebaseUser user = mAuth.getCurrentUser();
-                    updateUI(user);
-                } else {
-                    // If sign in fails, display a message to the user.
-                    Log.w(TAG, "signInWithEmail:failure", task.getException());
-                    Toast.makeText(Login.this, "Authentication failed.",
-                            Toast.LENGTH_SHORT).show();
-                    updateUI(null);
-                }
-                if (!task.isSuccessful()) {
-                    status.setText("Invalid Credentials.");
-                }
-            }
-        });
+        String email = loginet1.getText().toString().trim();
+        String password = loginet2.getText().toString().trim();
+
+        if(Patterns.EMAIL_ADDRESS.matcher(email).matches())
+        {
+            //The entered email address could be taken as a e-mail address.
+            //It is just in case people dont write stupid stuffs in email address field.
+        }
+        else{
+            loginet1.setError("Enter valid Email");
+            loginet1.requestFocus();
+            return;  //IF input is not a valid email it will give an error.
+        }
+        if(password.isEmpty())
+        {
+            loginet2.setError("Length more than 6 digits *");
+            loginet2.requestFocus();
+            return;
+        }
+        else {
+            mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(Login.this,
+                    new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            if (task.isSuccessful()) {
+                                // Sign in success, update UI with the signed-in user's information
+                                Log.d(TAG, "signInWithEmail:success");
+                                FirebaseUser user = mAuth.getCurrentUser();
+                                updateUI(user);
+                            } else {
+                                // If sign in fails, display a message to the user.
+                                Log.w(TAG, "signInWithEmail:failure", task.getException());
+                                Toast.makeText(Login.this, "Authentication failed.",
+                                        Toast.LENGTH_SHORT).show();
+                                updateUI(null);
+                            }
+                            if (!task.isSuccessful()) {
+                                status.setText("Invalid Credentials.");
+                            }
+                        }
+                    });
+        }
     }
 
     private void updateUI(FirebaseUser user){
-        if(user==null)
+        if(user!=null)
         {
-
-        }
-        else{
             Intent it = new Intent(this, HomeActivity.class);
             startActivity(it);
         }

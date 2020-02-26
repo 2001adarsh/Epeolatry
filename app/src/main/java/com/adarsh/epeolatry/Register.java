@@ -24,7 +24,6 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
     private EditText et1, et2;
     private Button register;
     private FirebaseAuth mAuth;
-    private String email, password;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,8 +68,8 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
         }
 
         if( i== R.id.register){
-            email = et1.getText().toString();
-            password = et1.getText().toString();
+            String email = et1.getText().toString().trim();
+            String password = et2.getText().toString().trim();
             if(email.isEmpty()) {
                 et1.setError("Enter email.");
                 et1.requestFocus();
