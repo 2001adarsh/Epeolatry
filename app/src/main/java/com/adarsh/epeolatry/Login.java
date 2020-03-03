@@ -3,6 +3,7 @@ package com.adarsh.epeolatry;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -25,11 +26,15 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
     private Button login;
     private FirebaseAuth mAuth;
     private String TAG ="LoginPage";
+    private ProgressDialog progressDialog;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        progressDialog = new ProgressDialog(this);
 
         mAuth = FirebaseAuth.getInstance();
 
@@ -87,10 +92,15 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
             return;
         }
         else {
+
+            progressDialog.setMessage("Please wait...");
+            progressDialog.show();
+
             mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(Login.this,
                     new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
+                            progressDialog.dismiss();
                             if (task.isSuccessful()) {
                                 // Sign in success, update UI with the signed-in user's information
                                 Log.d(TAG, "signInWithEmail:success");

@@ -3,6 +3,7 @@ package com.adarsh.epeolatry;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -24,6 +25,7 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
     private EditText et1, et2;
     private Button register;
     private FirebaseAuth mAuth;
+    private ProgressDialog progressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +33,7 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
         setContentView(R.layout.activity_register);
 
         setvariables();
-
+        progressDialog = new ProgressDialog(this);
         mAuth= FirebaseAuth.getInstance();
 
         goLogin.setOnClickListener(this);
@@ -84,10 +86,15 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
             }
             else{  //Every field is filled, now creating user with email-id
 
+                progressDialog.setMessage("Please wait...");
+                progressDialog.show();
+
                 mAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(this,
                         new OnCompleteListener<AuthResult>() {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
+                                progressDialog.dismiss();
+
                                 if (task.isSuccessful()) {
                                     // Sign in success, update UI with the signed-in user's information
                                     Log.d(TAG, "createUserWithEmail:success");
