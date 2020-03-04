@@ -2,6 +2,8 @@ package com.adarsh.epeolatry;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,22 +12,49 @@ import android.widget.Button;
 
 import com.google.firebase.auth.FirebaseAuth;
 
-public class GenreActivity extends AppCompatActivity {
+import java.util.ArrayList;
 
-    //private Button logout;
+public class GenreActivity extends AppCompatActivity implements View.OnClickListener{
+
+    private Button logout;
+    RecyclerView recyclerView;
+    ArrayList<GenreBook> genre;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_genre);
 
-     //   setvariables();
-       // logout.setOnClickListener(this);
+      setvariables();
+      logout.setOnClickListener(this);
     }
 
-  /*  private void setvariables(){
+    private void setvariables(){
         logout = (Button)findViewById(R.id.logout);
+
+        //Array creation
+        genre = new ArrayList<>();
+        addingFiles();
+
+        //REcycler View
+        recyclerView = findViewById(R.id.rv);
+        LinearLayoutManager layoutManager= new LinearLayoutManager(this);
+        RecyclerView.LayoutManager rvLLM = layoutManager;
+        recyclerView.setLayoutManager(rvLLM);
+        GenreAdapter adapter = new GenreAdapter(this, genre);
+        recyclerView.setAdapter(adapter);
     }
+
+
+    private void addingFiles(){
+        genre.add(new GenreBook(R.drawable.romance,"Romantic","amit dega") );
+        genre.add(new GenreBook(R.drawable.horror,"Horror","amit dega") );
+        genre.add(new GenreBook(R.drawable.crime,"Crime","amit dega") );
+        genre.add(new GenreBook(R.drawable.scifi,"Science Fiction","amit dega") );
+        genre.add(new GenreBook(R.drawable.act,"Thriller","amit dega") );
+    }
+
+
     @Override
     public void onClick(View view) {
 
@@ -37,5 +66,4 @@ public class GenreActivity extends AppCompatActivity {
         }
     }
 
-   */
 }

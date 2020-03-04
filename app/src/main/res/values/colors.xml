@@ -5,4 +5,6 @@
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
     <color name="Basic">#47555E</color>
+    <color name="Lock">#FF7AA5D2</color>
+    <color name="UsedDark">#FF7AA5D2</color>
 </resources>
