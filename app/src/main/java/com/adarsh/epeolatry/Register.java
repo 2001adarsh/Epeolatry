@@ -119,7 +119,7 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
 
         }
         else{
-            Intent it = new Intent(this, HomeActivity.class);
+            Intent it = new Intent(this, GenreActivity.class);
             startActivity(it);
         }
     }

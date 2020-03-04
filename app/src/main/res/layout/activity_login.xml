@@ -1,121 +1,115 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/splash_back"
+    android:background="@drawable/back"
     tools:context=".Login">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/app_name"
-        android:layout_centerHorizontal="true"
-        android:textSize="45dp"
-        android:fontFamily="cursive"
-        android:layout_marginTop="35dp"
-        android:id="@+id/login1"
-        />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Login:"
-        android:layout_below="@id/login1"
-        android:layout_marginTop="65dp"
-        android:layout_marginLeft="50dp"
-        android:textSize="25dp"
-        android:fontFamily="sans-serif-black"
-        android:id="@+id/login2"
-        />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Email ID: "
-        android:layout_below="@id/login2"
-        android:layout_marginTop="30dp"
-        android:textSize="25sp"
-        android:layout_alignStart="@id/login2"
-        android:layout_alignLeft="@id/login2"
-        android:padding="2dp"
-        android:id="@+id/loginTV"/>
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="407dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="404dp"
+        android:cropToPadding="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/logo" />
 
     <EditText
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_alignLeft="@id/loginTV"
-        android:layout_marginLeft="120dp"
-        android:layout_below="@id/login2"
-        android:layout_marginRight="20dp"
-        android:padding="2dp"
-        android:layout_marginTop="30dp"
         android:id="@+id/loginet1"
-        android:inputType="textEmailAddress"
-        />
-    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Password: "
-        android:layout_below="@id/loginTV"
-        android:layout_marginTop="30dp"
-        android:textSize="25sp"
-        android:layout_alignStart="@id/login2"
-        android:layout_alignLeft="@id/login2"
-        android:padding="2dp"
-        android:id="@+id/loginTV1"/>
+        android:layout_marginBottom="385dp"
+        android:drawableLeft="@drawable/username"
+        android:ems="10"
+        android:hint="USERNAME"
+
+        android:inputType="textPersonName"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+
     <EditText
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_alignLeft="@id/loginTV1"
-        android:layout_marginLeft="130dp"
-        android:layout_marginRight="20dp"
-        android:layout_below="@id/loginet1"
-        android:padding="2dp"
-        android:layout_marginTop="30dp"
         android:id="@+id/loginet2"
-        android:inputType="textPassword"
-        />
-    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text=""
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="311dp"
+        android:drawableLeft="@drawable/lock"
+        android:ems="10"
+        android:hint="PASSWORD"
+        android:inputType="textPersonName"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView3"
+        android:layout_width="355dp"
+        android:layout_height="78dp"
+        android:layout_marginBottom="132dp"
+        android:background="#47555E"
+        app:cardBackgroundColor="#47555E"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <Button
+            android:id="@+id/login"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="304dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="25dp"
+            android:layout_marginVertical="13dp"
+            android:height="0dp"
+            android:background="#47555E"
+            android:elegantTextHeight="false"
+            android:elevation="0dp"
+            android:fontFamily="sans-serif-black"
+            android:text="Login"
+            android:textColor="#FF7AA5D2"
+            android:textSize="28sp" />
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/loginstatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_below="@id/loginet2"
         android:layout_centerHorizontal="true"
-        android:id="@+id/loginstatus"
-        android:layout_marginTop="20dp"
+        android:layout_marginBottom="32dp"
+        android:fontFamily="sans-serif-light"
+        android:text=""
         android:textColor="#D81313"
         android:textSize="18sp"
         android:textStyle="normal"
-        android:fontFamily="sans-serif-light"
-        />
-    <Button
-        android:id="@+id/login"
-        android:text="Login"
-        android:textColor="#0A0A09"
-        android:textSize="25sp"
-        android:layout_width="150dp"
-        android:layout_height="40dp"
-        android:background="@drawable/buttonshape"
-        android:shadowColor="#7EA1A8"
-        android:shadowRadius="5"
-        android:fontFamily="serif-monospace"
-        android:textAllCaps="false"
-        android:layout_below="@id/loginet2"
-        android:layout_alignParentEnd="true"
-        android:layout_marginRight="30dp"
-        android:layout_marginTop="55dp"
-        android:layout_alignParentRight="true" />
+        app:layout_constraintBottom_toTopOf="@+id/cardView3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.437"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
+        android:id="@+id/goregister"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Dont have account? \nLogin Here"
         android:layout_below="@id/loginet2"
-        android:layout_marginTop="55dp"
+        android:layout_marginEnd="248dp"
+        android:layout_marginRight="248dp"
+        android:layout_marginBottom="68dp"
+        android:text="Dont have account? \nLogin Here"
         android:textSize="15dp"
-        android:layout_marginLeft="20dp"
         android:textStyle="italic"
-        android:id="@+id/goregister"
-        />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

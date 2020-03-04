@@ -124,7 +124,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
     private void updateUI(FirebaseUser user){
         if(user!=null)
         {
-            Intent it = new Intent(this, HomeActivity.class);
+            Intent it = new Intent(this, GenreActivity.class);
             startActivity(it);
         }
     }
