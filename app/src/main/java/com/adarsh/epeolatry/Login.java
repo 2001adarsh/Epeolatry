@@ -52,9 +52,9 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
 
     private void setvariables(){
         goRegister = (TextView) findViewById(R.id.goregister);
-        loginet1 = (EditText) findViewById(R.id.loginet1);
-        loginet2 = (EditText) findViewById(R.id.loginet2);
-        login = (Button) findViewById(R.id.login);
+        loginet1 = (EditText) findViewById(R.id.et1);
+        loginet2 = (EditText) findViewById(R.id.et2);
+        login = (Button) findViewById(R.id.register);
         status = (TextView) findViewById(R.id.loginstatus);
     }
 
@@ -65,7 +65,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
             Intent it = new Intent(this, Register.class);
             startActivity(it);
         }
-        if(i == R.id.login){
+        if(i == R.id.register){
             loginpls();
         }
     }
