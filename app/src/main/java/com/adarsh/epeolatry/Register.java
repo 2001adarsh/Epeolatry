@@ -67,6 +67,7 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
         if(i == R.id.gologin){
             Intent it = new Intent(this, Login.class);
             startActivity(it);
+            finish();
         }
 
         if( i== R.id.register){
@@ -121,6 +122,7 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
         else{
             Intent it = new Intent(this, GenreActivity.class);
             startActivity(it);
+            finish();
         }
     }
 
