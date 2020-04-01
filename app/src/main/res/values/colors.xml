@@ -7,4 +7,6 @@
     <color name="Basic">#47555E</color>
     <color name="Lock">#FF7AA5D2</color>
     <color name="UsedDark">#FF7AA5D2</color>
+
+    <color name="Divider">#25CCF7</color>
 </resources>

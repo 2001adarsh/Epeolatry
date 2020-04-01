@@ -6,6 +6,10 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+
+<!--        For divider color in navigational Bar-->
+        <item name="android:listDivider">@color/Divider</item>
+
     </style>
 
 </resources>

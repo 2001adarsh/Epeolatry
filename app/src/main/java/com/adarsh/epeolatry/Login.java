@@ -64,6 +64,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         if( i == R.id.goregister){
             Intent it = new Intent(this, Register.class);
             startActivity(it);
+            finish();
         }
         if(i == R.id.register){
             loginpls();
@@ -126,6 +127,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         {
             Intent it = new Intent(this, GenreActivity.class);
             startActivity(it);
+            finish();
         }
     }
 }

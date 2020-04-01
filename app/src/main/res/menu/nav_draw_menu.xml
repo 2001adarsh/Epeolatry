@@ -1,4 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn = "@layout/activity_genre" >
+    <group>
+        <item android:title="My Profile"
+            android:id="@+id/profile_menu"
+            android:icon="@drawable/ic_account_box_black_24dp"
+            />
+        <item android:title="Settings"
+            android:id="@+id/settings_menu"
+            android:icon="@drawable/settings_img" />
+        <item android:title="Log out"
+            android:id="@+id/signOut_menu"
+            android:icon="@drawable/signout_img"/>
+    </group>
+
+    <item android:title="Product">
+    <menu>
+        <group>
+        <item android:title="My Cart"
+            android:id="@+id/cart_menu"
+            android:icon="@drawable/cart_img" />
+        <item android:title="My Whishist"
+            android:id="@+id/whishlist_menu"
+            android:icon="@drawable/wishlist_img"/>
+        <item android:title="Order History"
+            android:id="@+id/history_menu"
+            android:icon="@drawable/ic_history_black_24dp"/>
+        <item android:title="My Chats"
+            android:id="@+id/chats_menu"
+            android:icon="@drawable/ic_chat_black_24dp"/>
+        </group>
+    </menu>
+    </item>
 
 </menu>

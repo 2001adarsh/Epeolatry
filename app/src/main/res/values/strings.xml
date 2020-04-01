@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">Epeolatry</string>
-    <string name="nav_username">UserName Singh</string>
+    <string name="nav_username">UserName Here</string>
+
+<!--    Toggle buttons of Navigational Drawers-->
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
 </resources>
