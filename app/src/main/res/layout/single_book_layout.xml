@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="5dp"
+    app:cardElevation="5dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:padding="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/bookimg"
+            android:layout_width="150dp"
+            android:layout_height="170dp"
+            android:scaleType="fitXY"
+
+            android:src="@drawable/a_long_petal_at_sea" />
+        <TextView
+            android:id="@+id/as"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Author:"
+            android:layout_below="@id/bookimg"
+            android:textSize="14sp"/>
+        <TextView
+            android:id="@+id/author"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Isabel Allende "
+            android:textSize="18sp"
+            android:layout_below="@id/as"
+            android:padding="2dp"
+            />
+        <Button
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="Add to cart"
+            android:layout_below="@id/author"
+            android:textSize="20sp"
+            android:padding="2dp"
+            android:background="#00FFFFFF"/>
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
