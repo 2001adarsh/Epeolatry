@@ -48,7 +48,6 @@ public class GenreAdapter extends RecyclerView.Adapter<GenreAdapter.ViewHolder> 
 
         imageView.setImageResource(lis.get(position).getImages());
         name.setText(lis.get(position).getGenre());
-        desc.setText(lis.get(position).getDesc());
 
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -74,7 +73,6 @@ public class GenreAdapter extends RecyclerView.Adapter<GenreAdapter.ViewHolder> 
             super(itemView);
             imageView = itemView.findViewById(R.id.imageView);
             genreName = itemView.findViewById(R.id.genreName);
-            genreDesc = itemView.findViewById(R.id.genreDesc);
         }
     }
 }

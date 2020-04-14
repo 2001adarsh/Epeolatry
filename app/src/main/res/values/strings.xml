@@ -8,4 +8,8 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="email">\@amityadav1</string>
+    <string name="email2">\@adarshsingh</string>
+
 </resources>

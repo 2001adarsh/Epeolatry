@@ -48,7 +48,6 @@
                 android:layout_marginLeft="30dp"
                 android:layout_marginTop="10dp"
                 android:fontFamily="casual"
-                android:text="DESC"
                 android:textColor="#1E88E5"
                 android:textSize="30sp"
                 android:textStyle="normal|italic" />

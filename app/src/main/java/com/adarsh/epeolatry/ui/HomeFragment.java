@@ -20,7 +20,7 @@ import java.util.ArrayList;
 
 public class HomeFragment extends Fragment {
 
-    ArrayList<RomanticBook> romanticBooks = RomanticBook.getBooks(100);
+    ArrayList<RomanticBook> romanticBooks = RomanticBook.getBooks(10);
     RecyclerView BooksRV;
 
     public HomeFragment() {

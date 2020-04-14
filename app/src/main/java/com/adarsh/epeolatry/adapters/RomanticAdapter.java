@@ -4,8 +4,10 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -38,6 +40,12 @@ public class RomanticAdapter extends RecyclerView.Adapter<RomanticAdapter.Romant
         RomanticBook romanticBook = romanticBooks.get(position);
         holder.RomImg.setImageResource(romanticBook.getRomImg());
         holder.Author.setText(romanticBook.getRomAuthor());
+        holder.addTocart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(cntx, "Book Added To Cart!", Toast.LENGTH_LONG).show();
+            }
+        });
     }
 
     @Override
@@ -49,11 +57,13 @@ public class RomanticAdapter extends RecyclerView.Adapter<RomanticAdapter.Romant
 
         ImageView RomImg;
         TextView Author;
+        Button addTocart;
 
         public RomanticVH(@NonNull View itemView) {
             super(itemView);
             RomImg = itemView.findViewById(R.id.bookimg);
             Author = itemView.findViewById(R.id.author);
+            addTocart = itemView.findViewById(R.id.addToCart);
         }
     }
 }

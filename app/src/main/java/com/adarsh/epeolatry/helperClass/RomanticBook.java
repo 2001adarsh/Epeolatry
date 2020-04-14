@@ -23,6 +23,7 @@ public class RomanticBook {
     }
 
     private static int[] images = {
+            R.drawable.divergent,
             R.drawable.a_long_petal_at_sea,
             R.drawable.beautiful_disaster,
             R.drawable.gone_with_wind,
@@ -35,6 +36,7 @@ public class RomanticBook {
     };
 
     private static String[] authors = {
+            "VERONICA ROTH",
         "ISABEL ALLENDE",
             "JAMIE MCGUIRE",
             "MARGARET MITCHELL",
@@ -48,12 +50,9 @@ public class RomanticBook {
 
     public static ArrayList<RomanticBook> getBooks(int n){
         ArrayList<RomanticBook> romanticBooks = new ArrayList<>();
-        Random r = new Random();
-
         for(int i=0; i<n; i++)
         {
-            int x = r.nextInt(9);
-            romanticBooks.add(new RomanticBook(images[x], authors[x]));
+            romanticBooks.add(new RomanticBook(images[i], authors[i]));
         }
         return romanticBooks;
     }
