@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:apps="http://schemas.android.com/tools"
+    apps:cnb_unselectedColor="#fff" >
+
+    <item
+        android:id="@+id/nav_home"
+        android:icon="@drawable/home"
+        android:title="Home"
+        app:cnb_backgroundColor="#FB3030"
+        app:cnb_iconColor="#fff"
+        app:cnb_textColor = "#fff"/>
+    <item
+        android:id="@+id/nav_chat"
+        android:icon="@drawable/ic_chat_black_24dp"
+        android:title="Chat"
+        app:cnb_backgroundColor="#FB3030"
+        app:cnb_iconColor="#fff"
+        app:cnb_textColor = "#fff" />
+    <item
+        android:id="@+id/nav_cart"
+        android:icon="@drawable/cart_img"
+        app:cnb_backgroundColor="#FB3030"
+        app:cnb_iconColor="#fff"
+        app:cnb_textColor = "#fff"
+        android:title="Cart" />
+    <item
+        android:id="@+id/nav_acc"
+        android:icon="@drawable/ic_account_circle_black_24dp"
+        android:title="Accounts"
+        app:cnb_backgroundColor="#FB3030"
+        app:cnb_iconColor="#fff"
+        app:cnb_textColor = "#fff"/>
+</menu>

@@ -1,6 +1,7 @@
-package com.adarsh.epeolatry;
+package com.adarsh.epeolatry.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +10,11 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.adarsh.epeolatry.BottomMain;
+import com.adarsh.epeolatry.helperClass.GenreBook;
+import com.adarsh.epeolatry.R;
+import com.adarsh.epeolatry.ui.HomeFragment;
 
 import java.util.ArrayList;
 
@@ -19,7 +25,7 @@ public class GenreAdapter extends RecyclerView.Adapter<GenreAdapter.ViewHolder> 
     ArrayList<GenreBook> lis;
 
 
-    GenreAdapter(Context context, ArrayList<GenreBook> list){
+    public GenreAdapter(Context context, ArrayList<GenreBook> list){
         cntx = context;
         lis = list;
     }
@@ -43,6 +49,14 @@ public class GenreAdapter extends RecyclerView.Adapter<GenreAdapter.ViewHolder> 
         imageView.setImageResource(lis.get(position).getImages());
         name.setText(lis.get(position).getGenre());
         desc.setText(lis.get(position).getDesc());
+
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent it = new Intent(cntx, BottomMain.class);
+                cntx.startActivity(it);
+            }
+        });
 
     }
 

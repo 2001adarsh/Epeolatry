@@ -1,4 +1,4 @@
-package com.adarsh.epeolatry;
+package com.adarsh.epeolatry.helperClass;
 
 public class GenreBook {
     private int images;
